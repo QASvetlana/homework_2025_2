@@ -57,4 +57,18 @@ QUnit.test('Работает со сложными объектами', (assert)
         'Строки должны преобразовываться в верхний регистр'
     );
 });
+
+QUnit.test('Обрабатывает различные типы данных', (assert) => {
+    assert.strictEqual(
+        transform(null, x => x * 2),
+        null,
+        'null должен остаться null'
+    );
+    
+    assert.strictEqual(
+        transform(undefined, x => x * 2),
+        undefined,
+        'undefined должен остаться undefined'
+    );
+});
 });
